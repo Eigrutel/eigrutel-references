@@ -1,0 +1,514 @@
+<!doctype html>
+<!-- Eigrutel Lab - Atelier d'outils libres pour la bande dessinée
+Programme conçu et développé par Simon Léturgie dans le cadre d'Eigrutel BD Academy.
+Nom : References
+Version : 1.0.0
+Date : 03-09-2026
+Code : GNU AGPL v3.0 ou version ultérieure.
+Documentation et modèles : CC BY-SA 4.0, sauf mention contraire.
+Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Academy : réservés.
+-->
+
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>References</title>
+<meta name="apple-mobile-web-app-title" content="References">
+<link rel="icon" type="image/png" href="favicon/favref.png">
+<link rel="apple-touch-icon" href="favicon/favref.png">
+<style>
+/* Styles généraux de l’application : palette atelier, structure, cartes, panneaux et responsive. */
+:root{--bleu:#1F3A44;--rouge:#A63D40;--ocre:#C47A2C;--fond:#F4F1EA;--papier:#FAFAF7;--txt:#1f2a2d;--muted:#687275;--line:rgba(31,58,68,.14);--shadow:0 10px 24px rgba(31,58,68,.10)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--fond);color:var(--txt)}button,input,textarea,select{font:inherit}button{border:0;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.hidden{display:none!important}.app{min-height:100dvh;display:flex;flex-direction:column}.top{position:sticky;top:0;z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 16px 12px}.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px}.kicker{display:inline-flex;align-items:center;gap:8px;color:var(--rouge);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.kicker:before,.kicker:after{content:"";width:22px;height:1px;background:currentColor;opacity:.65}h1{margin:2px 0 0;font-size:clamp(28px,5vw,46px);line-height:.96;letter-spacing:-.055em;color:var(--bleu)}.projectName{margin-top:5px;color:var(--muted);font-size:12px;font-weight:850;letter-spacing:.01em;max-width:56vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.topActions{display:flex;gap:8px;align-items:center}.addBar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.urlInput{min-height:44px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--txt);padding:0 15px;font-size:15px;outline:0}.urlInput:focus{border-color:rgba(166,61,64,.45);box-shadow:0 0 0 4px rgba(166,61,64,.10)}.homeFilters{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-top:8px;align-items:center}.homeFilters select{min-height:38px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--bleu);padding:0 12px;font-size:12px;font-weight:850}.btn.homeSave{min-height:38px;background:#fff;color:var(--rouge);border-color:rgba(166,61,64,.32);font-weight:950;letter-spacing:.02em;padding:0 14px}.btn.homeSave:hover{background:rgba(166,61,64,.07)}.homeSearch{margin-top:8px}.searchFieldWrap{position:relative}.homeSearch .searchInput{width:100%;display:block;outline:0;padding-right:42px}.homeSearch .searchInput:focus{border-color:rgba(166,61,64,.45);box-shadow:0 0 0 4px rgba(166,61,64,.10)}.searchClear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:0;border-radius:999px;background:transparent;color:var(--muted);font-size:22px;line-height:1;cursor:pointer;display:none}.searchClear:hover{background:rgba(31,58,68,.08);color:var(--ink)}.searchClear.is-visible{display:block}.btn{min-height:40px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--bleu);padding:0 13px;font-size:12px;font-weight:850;box-shadow:none}.btn.primary{min-height:44px;background:var(--rouge);border-color:var(--rouge);color:#fff;padding:0 18px}.btn.icon{width:42px;min-width:42px;padding:0;display:inline-flex;align-items:center;justify-content:center}.btn.searchIcon{font-size:26px;line-height:1}.btn.infoIcon{font-size:18px;font-weight:950;line-height:1;color:var(--bleu)}.btn.gearIcon{font-size:0;line-height:1}.btn.gearIcon svg{width:22px;height:22px;stroke:var(--bleu);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}.btn.gearIcon svg circle{fill:var(--papier);stroke:var(--bleu);stroke-width:2}.btn.gearIcon:hover{background:var(--bleu);border-color:var(--bleu)}.btn.gearIcon:hover svg{stroke:#fff}.btn.gearIcon:hover svg circle{fill:var(--bleu);stroke:#fff}.main{width:min(1160px,100%);margin:0 auto;padding:16px}.summary{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px;color:var(--muted);font-size:12px;font-weight:750}.activeFilters{display:flex;gap:6px;flex-wrap:wrap}.chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;border:1px solid var(--line);background:#fff;padding:5px 8px;font-size:11px;font-weight:800;color:var(--bleu)}.chip.active{background:var(--bleu);border-color:var(--bleu);color:#fff}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}.card{position:relative;min-height:100px;border-radius:16px;background:var(--catColor,#9FC3CF);border:1px solid rgba(31,58,68,.14);box-shadow:0 8px 18px rgba(31,58,68,.09);overflow:hidden;transition:transform .12s ease,box-shadow .12s ease;cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--bleu)}.card:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(31,58,68,.13)}.card.dragReady{outline:2px solid rgba(31,58,68,.26);outline-offset:2px}.card.dragging{opacity:.94;cursor:grabbing;box-shadow:0 18px 34px rgba(31,58,68,.22);z-index:30;touch-action:none}.card.dropTarget{outline:3px solid var(--rouge);outline-offset:3px}body.dragging-card{overflow:hidden;touch-action:none}.cardLink{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;color:inherit;text-decoration:none;padding:12px 7px 28px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.thumb{width:44px;height:44px;border-radius:12px;background:#E7E1D7;position:relative;overflow:hidden;border:1px solid rgba(31,58,68,.12);box-shadow:0 5px 12px rgba(31,58,68,.10)}.thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.94);transform:scale(1.01)}.fallbackIcon{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;background:var(--bleu);color:#fff}.fallbackIcon b{font-size:16px;line-height:1;font-weight:950;letter-spacing:-.06em}.fallbackIcon small{margin-top:4px;font-size:7px;line-height:1;font-weight:900;letter-spacing:.12em;text-transform:uppercase;opacity:.74}.thumb.noImg .fallbackIcon{display:flex}.thumb.noImg img{display:none}.name{width:100%;min-height:25px;display:flex;align-items:center;justify-content:center;text-align:center;padding:7px 2px 0;font-size:11px;font-weight:900;line-height:1.08;color:var(--bleu);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.editBtn{position:absolute;right:5px;bottom:5px;width:24px;height:24px;border-radius:999px;border:1px solid rgba(31,58,68,.14);background:rgba(250,250,247,.94);color:var(--bleu);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}.editBtn:hover{background:var(--bleu);color:#fff}.favMark{position:absolute;left:7px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--rouge);box-shadow:0 0 0 3px rgba(250,250,247,.86)}.empty{margin:36px auto;max-width:440px;text-align:center;color:var(--muted);font-size:14px}.footer{margin-top:auto;text-align:center;padding:14px 16px;border-top:1px solid var(--line);background:var(--papier)}.footer a{color:var(--bleu);text-decoration:none;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.drawer{position:fixed;inset:0;z-index:50;display:none;background:rgba(31,58,68,.28);backdrop-filter:blur(3px)}.drawer.open{display:block}.panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:var(--papier);border-left:1px solid var(--line);box-shadow:-18px 0 45px rgba(31,58,68,.18);padding:16px;overflow:auto}.panelHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.panelHead h2{margin:0;color:var(--bleu);font-size:20px;letter-spacing:-.02em}.close{width:38px;height:38px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--bleu);font-size:24px;line-height:1}.field{display:grid;gap:6px;margin:0 0 12px}.field label{font-size:10px;font-weight:900;letter-spacing:.10em;text-transform:uppercase;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#fff;color:var(--txt);border-radius:14px;padding:11px 12px;outline:0}.field textarea{min-height:92px;resize:vertical;line-height:1.45}.panelActions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn.danger{background:rgba(166,61,64,.09);border-color:rgba(166,61,64,.26);color:var(--rouge)}.btn.ocre{background:rgba(196,122,44,.12);border-color:rgba(196,122,44,.28);color:#8C531E}.favToggle{display:inline-flex;align-items:center;gap:7px}.favToggle svg{width:14px;height:14px;fill:var(--rouge);stroke:var(--rouge);stroke-width:1.6;flex:0 0 auto}.searchTools{display:grid;gap:12px}.searchInput{min-height:44px;border-radius:999px;border:1px solid var(--line);background:#fff;padding:0 14px}.filterGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.filterGrid .field{margin:0}.filterGrid select{min-height:40px;border-radius:999px;padding:0 12px;font-size:13px;font-weight:800}.countTitle{margin:10px 0 0;color:var(--rouge);font-size:10px;font-weight:950;letter-spacing:.12em;text-transform:uppercase}.countList{display:flex;gap:6px;flex-wrap:wrap}.countChip{border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--bleu);padding:7px 9px;font-size:12px;font-weight:850}.countChip strong{font-size:10px;color:var(--muted);margin-left:4px}.countChip.active{background:var(--bleu);border-color:var(--bleu);color:#fff}.countChip.active strong{color:rgba(255,255,255,.72)}.settingsGroup{display:grid;gap:8px;margin-top:10px}.langLabel{display:inline-flex;align-items:center;gap:6px;font-weight:950;letter-spacing:.08em}.checkOption .langLabel{display:inline-flex;flex-direction:row;align-items:center;gap:7px;width:auto}.checkOption .langLabel small{display:none!important;margin:0}.checkOption:has(#langSwitch){align-items:center}.langChoice{color:var(--bleu);opacity:.72}.langChoice.active{color:var(--rouge);opacity:1}.langArrow{color:var(--muted);font-weight:900}.sectionSep{height:1px;background:var(--line);margin:8px 0}.categoryAdd{display:grid;grid-template-columns:1fr 52px auto;gap:8px;align-items:center}.categoryAdd input[type=color]{height:40px;padding:3px;border-radius:12px}.categoryManager{display:grid;gap:8px;margin-top:4px}.categoryRow{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px;border:1px solid var(--line);background:#fff;border-radius:14px}.categoryRow input[type=color]{width:38px;height:34px;padding:2px;border-radius:10px}.categoryRowName{display:grid;gap:3px;min-width:0}.categoryRowName input{width:100%;min-height:32px;border:1px solid var(--line);border-radius:10px;background:#FAFAF7;color:var(--bleu);padding:0 9px;font-size:12px;font-weight:900;outline:0}.categoryRowName input:focus{border-color:rgba(166,61,64,.45);box-shadow:0 0 0 3px rgba(166,61,64,.09)}.categoryRowName input:disabled{opacity:.82;background:#F4F1EA}.categoryRowName small{display:block;color:var(--muted);font-size:10px;font-weight:800}.categoryRow .btn{min-height:32px;padding:0 9px;font-size:11px}.categoryRow.locked{opacity:.78}.note{font-size:12px;line-height:1.45;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}.status{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:80;max-width:calc(100vw - 32px);border-radius:999px;background:var(--bleu);color:#fff;padding:9px 13px;font-size:12px;font-weight:800;box-shadow:0 10px 22px rgba(31,58,68,.24);opacity:0;pointer-events:none;transition:opacity .18s ease}.status.show{opacity:1}.previewBox{height:150px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#E7E1D7}.previewBox img{width:100%;height:100%;object-fit:cover;display:block}.imageSourceActions{display:flex;gap:8px;align-items:center;margin-top:2px}.imageSourceActions .btn{min-height:36px}.checkOption{display:flex;align-items:flex-start;gap:9px;padding:10px;border:1px solid var(--line);background:#fff;border-radius:14px;color:var(--bleu);font-size:12px;font-weight:850;line-height:1.35}.checkOption input{width:18px;height:18px;margin:0;accent-color:var(--rouge);flex:0 0 auto}.langOption{align-items:center}.checkOption span{display:block}.checkOption small{display:block;margin-top:2px;color:var(--muted);font-size:11px;font-weight:700}.fileInput{display:none}
+@media(max-width:700px){.top{padding:10px 10px 9px}.head{align-items:center;margin-bottom:10px}.kicker{display:none}h1{font-size:25px}.projectName{font-size:11px;max-width:48vw;margin-top:3px}.btn.icon{width:40px;min-width:40px}.main{padding:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{min-height:98px;border-radius:14px}.thumb{width:42px;height:42px}.name{font-size:10.8px;min-height:24px}.editBtn{width:24px;height:24px}.panel{width:100%;border-left:0}.summary{font-size:11px;margin-bottom:9px}.urlInput,.btn.primary{min-height:42px}.btn.primary{padding:0 13px}.homeFilters{grid-template-columns:1fr 1fr}.homeFilters .homeSave{grid-column:1/-1}.filterGrid{grid-template-columns:1fr 1fr}.categoryAdd{grid-template-columns:1fr 48px}.categoryAdd .btn{grid-column:1/-1}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(auto-fill,minmax(108px,1fr))}.thumb{width:46px;height:46px}}
+
+/* Cartes compactes horizontales — même principe sur ordinateur et mobile */
+.grid{
+  grid-template-columns:repeat(auto-fill,142px);
+  gap:10px;
+  justify-content:center;
+}
+.card{
+  width:142px;
+  min-height:96px;
+  border-radius:14px;
+}
+.cardLink{
+  height:100%;
+  min-height:96px;
+  display:grid;
+  grid-template-columns:48% 1fr;
+  grid-template-rows:1fr;
+  align-items:stretch;
+  gap:0;
+  padding:7px 26px 7px 7px;
+}
+.thumb{
+  width:100%;
+  height:100%;
+  min-height:78px;
+  border-radius:11px;
+  align-self:stretch;
+  box-shadow:0 4px 10px rgba(31,58,68,.10);
+}
+.thumb img{object-fit:cover}
+.fallbackIcon b{font-size:18px}
+.fallbackIcon small{font-size:7px}
+.name{
+  width:auto;
+  min-height:0;
+  align-self:center;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  text-align:left;
+  justify-content:flex-start;
+  padding:0 0 0 8px;
+  font-size:10.6px;
+  line-height:1.13;
+}
+.editBtn{right:5px;bottom:5px;width:23px;height:23px;font-size:12px}
+.favMark{left:7px;top:8px}
+@media(max-width:700px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;justify-content:stretch}
+  .card{width:auto;min-height:96px}
+}
+@media(max-width:370px){
+  .card{min-height:90px}
+  .cardLink{min-height:90px;grid-template-columns:45% 1fr;padding:6px 25px 6px 6px}
+  .thumb{min-height:74px}
+  .name{font-size:10px;padding-left:7px}
+}
+
+
+/* Autorise les retours à la ligne dans les noms de sites longs */
+.name{
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  hyphens:auto;
+}
+@media(max-width:700px){
+  .name{
+    -webkit-line-clamp:5;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="head">
+      <div><div class="kicker" id="appKicker">Documentation</div><h1 id="appTitle">References</h1><div class="projectName" id="projectNameDisplay">Mes références</div></div>
+      <div class="topActions">
+        <button class="btn icon searchIcon" id="openSearch" title="Recherche" aria-label="Recherche">⌕</button>
+        <button class="btn icon infoIcon" id="openInfo" title="Infos" aria-label="Infos">i</button>
+        <button class="btn icon gearIcon" id="openSettings" title="Bibliothèque" aria-label="Bibliothèque"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14"></path><path d="M5 17h14"></path><circle cx="9" cy="7" r="2.2"></circle><circle cx="15" cy="17" r="2.2"></circle></svg></button>
+      </div>
+    </div>
+    <div class="addBar"><input class="urlInput" id="urlInput" placeholder="Coller un lien de référence…" inputmode="url" autocomplete="off"><button class="btn primary" id="addBtn">Ajouter</button></div>
+    <div class="homeFilters"><select id="homeFavoriteFilter" aria-label="Favori"><option value="all">Tous</option><option value="favorites">Favoris</option></select><select id="homeCategoryFilter" aria-label="Catégorie"><option value="">Toutes catégories</option></select><button class="btn homeSave" id="homeSaveBtn" type="button">Sauvegarder</button></div>
+    <div class="homeSearch"><div class="searchFieldWrap"><input class="searchInput" id="homeSearchInput" placeholder="Rechercher" autocomplete="off"><button class="searchClear" id="homeSearchClear" type="button" aria-label="Effacer la recherche" title="Effacer la recherche">×</button></div></div>
+  </header>
+  <main class="main"><div class="summary"><span id="resultCount">0 référence</span><div class="activeFilters" id="activeFilters"></div></div><section class="grid" id="grid"></section><div class="empty hidden" id="empty">Aucune référence pour ce filtre.</div></main>
+  <footer class="footer"><a href="https://www.stripmee.com" target="_blank" rel="noopener noreferrer">Eigrutel BD Academy</a></footer>
+</div>
+
+<div class="drawer" id="searchDrawer" aria-hidden="true"><aside class="panel"><div class="panelHead"><h2>Recherche</h2><button class="close" data-close="searchDrawer">×</button></div><div class="searchTools"><input class="searchInput" id="searchInput" placeholder="Rechercher" autocomplete="off"><div class="filterGrid"><div class="field"><label>Favori</label><select id="favoriteFilter"><option value="all">Tous</option><option value="favorites">Favoris</option></select></div><div class="field"><label>Catégorie</label><select id="categoryFilter"><option value="">Toutes</option></select></div></div><div><div class="countTitle">Catégories</div><div class="countList" id="categoryList"></div></div><div><div class="countTitle">Tags</div><div class="countList" id="tagList"></div></div></div></aside></div>
+
+<div class="drawer" id="infoDrawer" aria-hidden="true"><aside class="panel"><div class="panelHead"><h2>Infos</h2><button class="close" data-close="infoDrawer">×</button></div><div class="note"><strong>Objectif.</strong> Se créer une collection personnelle de références visuelles à avoir sous la main dès que nécessaire.<br><br><strong>Usage.</strong> Collez un lien, ajoutez-le, puis utilisez le crayon pour régler le nom, l’image, la catégorie et les tags.<br><br><strong>Recherche.</strong> La loupe permet de retrouver les références par mot-clé, favori, catégorie ou tag.<br><br><strong>Bibliothèque.</strong> La roue crantée regroupe le tri, l’import/export JSON, la langue et la gestion des catégories.</div></aside></div>
+
+<div class="drawer" id="settingsDrawer" aria-hidden="true"><aside class="panel"><div class="panelHead"><h2>Bibliothèque</h2><button class="close" data-close="settingsDrawer">×</button></div><div class="settingsGroup"><div class="field"><label>Nom du tableau</label><input id="projectNameInput" maxlength="80" placeholder="Mes références"></div><div class="field"><label>Tri</label><select id="sortSelect"><option value="manual">Ordre manuel</option><option value="recent">Plus récent</option><option value="alpha">Alphabétique</option><option value="category">Catégorie</option><option value="favorite">Favoris d’abord</option></select></div><div class="panelActions"><button class="btn" id="exportBtn">Exporter JSON</button><button class="btn" id="importAddBtn">Importer et ajouter</button><button class="btn danger" id="importReplaceBtn">Importer et remplacer</button></div><label class="checkOption"><input type="checkbox" id="saveEditOnClose"><span>Enregistrer les changements à la fermeture d’une fiche<small>Si décoché, la croix et le clic hors fiche ignorent les modifications non validées.</small></span></label><label class="checkOption langOption"><input type="checkbox" id="langSwitch"><span class="langLabel"><span class="langChoice langFr">FR</span><span class="langArrow">↔</span><span class="langChoice langEn">EN</span><small></small></span></label><input class="fileInput" id="importFile" type="file" accept="application/json,.json"><p class="note">Les données sont enregistrées localement dans ce navigateur. L’export JSON sert de sauvegarde.</p><div class="sectionSep"></div><div class="field"><label>Nouvelle catégorie</label><div class="categoryAdd"><input id="newCategoryName" placeholder="Nom"><input id="newCategoryColor" type="color" value="#9FC3CF"><button class="btn" id="addCategoryBtn">Ajouter</button></div></div><div class="categoryManager" id="categoryManager"></div><p class="note">Renommer une catégorie met à jour les fiches concernées. Supprimer une catégorie déplace ses fiches dans “Divers”. Les couleurs sont utilisées pour le fond des mini-fiches.</p><div class="sectionSep"></div><button class="btn danger" id="resetBtn">Restaurer les références par défaut</button></div></aside></div>
+
+<div class="drawer" id="editDrawer" aria-hidden="true"><aside class="panel"><div class="panelHead"><h2>Modifier</h2><button class="close" data-close="editDrawer">×</button></div><div class="previewBox"><img id="editPreview" alt=""></div><div class="field"><label>Nom affiché</label><input id="editTitle"></div><div class="field"><label>Lien</label><input id="editUrl" inputmode="url"></div><div class="field"><label>Image</label><input id="editImage" inputmode="url" placeholder="URL d’image ou aperçu automatique"><div class="imageSourceActions"><button class="btn" id="importEditImageBtn" type="button">Importer une image</button><button class="btn" id="removeEditImageBtn" type="button">Retirer l’image</button><input class="fileInput" id="editImageFile" type="file" accept="image/*"></div></div><div class="field"><label>Catégorie</label><select id="editCategory"></select></div><div class="field"><label>Tags</label><input id="editTags" placeholder="poses, humain, mouvement"></div><div class="field"><label>Description</label><textarea id="editDescription"></textarea></div><div class="panelActions"><button class="btn primary" id="saveEdit">Valider</button><button class="btn" id="copyLink">Copier le lien</button><button class="btn favToggle" id="toggleFav">Favori</button><button class="btn danger" id="deleteEdit">Supprimer</button></div></aside></div>
+<div class="status" id="status"></div>
+<script>
+(async function(){'use strict';
+/*
+  Code applicatif de Références.
+  Créé par Simon Léturgie pour Eigrutel BD Academy.
+  Organisation générale : constantes, état, utilitaires, rendu, gestion des catégories, glissé-déposé, édition, import/export, puis liaisons d’événements.
+  Licence : à ajouter ici en commentaire.
+
+  Structure du script :
+  1. Données par défaut et état
+  2. Traductions
+  3. Utilitaires
+  4. Sauvegarde / chargement
+  5. Rendu et filtres
+  6. Catégories
+  7. Glissé-déposé
+  8. Ajout et édition
+  9. Import / export
+  10. Événements et démarrage
+*/
+/* =========================
+   1. DONNÉES / ÉTAT
+   ========================= */
+/* Clé localStorage : changer ce suffixe force un nouveau démarrage propre chez l’utilisateur. */
+const APP_VERSION='1.0.0';
+const STORAGE_KEY='eba_references_v24';
+/* Données de démarrage chargées depuis data/references-default.json. */
+let DEFAULT_CATEGORIES=[];
+let DEFAULT_CATEGORY_COLORS={};
+let DEFAULT_REFERENCES=[];
+let DEFAULT_DATA_LOADED=false;
+
+/*
+  Charge le catalogue officiel depuis data/references-default.json.
+  - cache:no-store évite de réutiliser volontairement une ancienne réponse du navigateur ;
+  - en cas d’échec, l’application reste utilisable avec une catégorie Divers vide ;
+  - les données locales existantes restent prioritaires tant que l’utilisateur ne restaure pas les valeurs par défaut.
+*/
+async function loadDefaultData(){
+  try{
+    const r=await fetch('./data/references-default.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const d=await r.json();
+    DEFAULT_CATEGORIES=Array.isArray(d.categories)?d.categories:[];
+    DEFAULT_CATEGORY_COLORS=d.categoryColors&&typeof d.categoryColors==='object'?d.categoryColors:{};
+    DEFAULT_REFERENCES=Array.isArray(d.items)?d.items:[];
+    DEFAULT_DATA_LOADED=true;
+  }catch(e){
+    console.error('Impossible de charger les références par défaut.',e);
+    DEFAULT_CATEGORIES=['Divers'];
+    DEFAULT_CATEGORY_COLORS={Divers:'#D8D0C4'};
+    DEFAULT_REFERENCES=[];
+    DEFAULT_DATA_LOADED=false;
+  }
+}
+/* Raccourcis DOM : $ récupère un élément, $$ récupère une liste convertie en tableau. */
+const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+const E={grid:$('#grid'),empty:$('#empty'),url:$('#urlInput'),add:$('#addBtn'),count:$('#resultCount'),filters:$('#activeFilters'),status:$('#status'),searchInput:$('#searchInput'),homeSearchInput:$('#homeSearchInput'),favoriteFilter:$('#favoriteFilter'),categoryFilter:$('#categoryFilter'),homeFavoriteFilter:$('#homeFavoriteFilter'),homeCategoryFilter:$('#homeCategoryFilter'),categoryList:$('#categoryList'),tagList:$('#tagList'),sort:$('#sortSelect'),importFile:$('#importFile'),categoryManager:$('#categoryManager'),newCategoryName:$('#newCategoryName'),newCategoryColor:$('#newCategoryColor'),saveEditOnClose:$('#saveEditOnClose'),langSwitch:$('#langSwitch'),homeSave:$('#homeSaveBtn'),projectName:$('#projectNameInput'),projectNameDisplay:$('#projectNameDisplay')};
+await loadDefaultData();
+/* État global de l’application : données, filtres, tri, langue, nom du tableau, édition et glissé-déposé. */
+let S={items:[],categories:[...DEFAULT_CATEGORIES],categoryColors:{...DEFAULT_CATEGORY_COLORS},filter:{q:'',category:'',tag:'',favorites:false,noTag:false},sort:'category',saveEditOnClose:true,lang:'fr',projectName:'Mes références',editing:null,drag:null,justDragged:false};
+/* =========================
+   2. TRADUCTIONS
+   ========================= */
+const I18N={en:{
+'Documentation':'Documentation','Références visuelles':'Visual references','Références':'References','Sauvegarder':'Save','Coller un lien de référence…':'Paste a reference link…','Lien':'Link','Ajouter':'Add','Recherche':'Search','Infos':'Info','Bibliothèque':'Library','Tous':'All','Favoris':'Favorites','Toutes catégories':'All categories','Toutes':'All','Catégorie':'Category','Catégories':'Categories','Tags':'Tags','Sans tag':'No tag','Aucune référence pour ce filtre.':'No reference for this filter.','Modifier':'Edit','Nom affiché':'Display name','Image':'Image','URL d’image ou aperçu automatique':'Image URL or automatic preview','Importer une image':'Import an image','Retirer l’image':'Remove image','Effacer la recherche':'Clear search','Image trop volumineuse.':'Image is too large.','Image importée.':'Image imported.','Description':'Description','Valider':'Apply','Copier le lien':'Copy link','Favori':'Favorite','Supprimer':'Delete','Retirer favori':'Remove favorite','Nom du tableau':'Board name','Mes références':'My references','Tri':'Sort','Ordre manuel':'Manual order','Plus récent':'Newest','Alphabétique':'Alphabetical','Favoris d’abord':'Favorites first','Exporter JSON':'Export JSON','Importer JSON':'Import JSON','Importer et ajouter':'Import and add','Importer et remplacer':'Import and replace','Import ajouté':'Import added','Import remplacé':'Import replaced','Enregistrer les changements à la fermeture d’une fiche':'Save changes when closing a card','Si décoché, la croix et le clic hors fiche ignorent les modifications non validées.':'If unchecked, closing or clicking outside ignores unapplied edits.','Interface en anglais':'FR ↔ EN','Active ou désactive l’interface anglaise.':'','Nouvelle catégorie':'New category','Nom':'Name','Tout effacer':'Clear all','Restaurer les références par défaut':'Restore default references','Aucun tag.':'No tag.','Catégorie renommée.':'Category renamed.','Catégorie ajoutée.':'Category added.','Catégorie supprimée.':'Category deleted.','Nom de catégorie manquant.':'Missing category name.','Catégorie déjà présente.':'Category already exists.','Référence ajoutée.':'Reference added.','Lien invalide.':'Invalid link.','Lien déjà présent.':'Link already exists.','Changements enregistrés.':'Changes saved.','Changements ignorés.':'Changes ignored.','Fiche modifiée.':'Card updated.','Référence supprimée.':'Reference deleted.','Lien copié.':'Link copied.','Copie impossible.':'Copy failed.','JSON exporté.':'JSON exported.','JSON invalide.':'Invalid JSON.','Bibliothèque réinitialisée.':'Library reset.','Références par défaut restaurées.':'Default references restored.','Importer : Ajouter à la bibliothèque actuelle ? Annuler remplacera toute la bibliothèque.':'Import: Add to the current library? Cancel will replace the whole library.','Bibliothèque remplacée.':'Library replaced.','Ce lien existe déjà. Ouvrir la fiche existante ?':'This link already exists. Open the existing card?','Fermeture : enregistrer.':'Close: save.','Fermeture : ignorer.':'Close: ignore.','Ordre modifié.':'Order changed.','Déplacement actif.':'Drag active.','fiche':'card','fiches':'cards','référence':'reference','références':'references','Objectif.':'Objective.','Usage.':'Usage.','Recherche.':'Search.','Bibliothèque.':'Library.','Se créer une collection personnelle de références visuelles à avoir sous la main dès que nécessaire.':'Build a personal collection of visual references to keep at hand whenever needed.','Collez un lien, ajoutez-le, puis utilisez le crayon pour régler le nom, l’image, la catégorie et les tags.':'Paste a link, add it, then use the pencil to set the name, image, category and tags.','La loupe permet de retrouver les références par mot-clé, favori, catégorie ou tag.':'The magnifier lets you find references by keyword, favorite, category or tag.','La roue crantée regroupe le tri, l’import/export JSON, la langue et la gestion des catégories.':'The settings button contains sorting, JSON import/export, language and category management.','Les données sont enregistrées localement dans ce navigateur. L’export JSON sert de sauvegarde.':'Data is saved locally in this browser. JSON export is used as a backup.','Renommer une catégorie met à jour les fiches concernées. Supprimer une catégorie déplace ses fiches dans “Divers”. Les couleurs sont utilisées pour le fond des mini-fiches.':'Renaming a category updates the relevant cards. Deleting a category moves its cards to “Divers”. Colors are used as mini-card backgrounds.'}};
+
+/* Traduit une clé d’interface selon la langue active. Si aucune traduction anglaise n’existe, la clé française est conservée. */
+function t(k){return (S.lang==='en'&&I18N.en[k])||k}
+
+/* Met à jour l’apparence du sélecteur FR ↔ EN : la langue active passe en rouge atelier. */
+function updateLangSwitchVisual(){const wrap=$('#langSwitch')?.closest('.checkOption');if(!wrap)return;const fr=wrap.querySelector('.langFr'),en=wrap.querySelector('.langEn');if(fr)fr.classList.toggle('active',S.lang!=='en');if(en)en.classList.toggle('active',S.lang==='en');const sm=wrap.querySelector('small');if(sm)sm.textContent='';}
+
+/* Applique la langue active à tous les libellés statiques de l’interface, aux titres, aux placeholders et aux panneaux. */
+function applyI18n(){document.documentElement.lang=S.lang;document.title='References';$('#appKicker').textContent=t('Documentation');$('#appTitle').textContent='References';if(E.projectNameDisplay)E.projectNameDisplay.textContent=S.projectName||t('Mes références');if(E.projectName){E.projectName.value=S.projectName||'';E.projectName.placeholder=t('Mes références');}E.url.placeholder=t('Coller un lien de référence…');E.add.textContent=t('Ajouter');if(E.homeSave)E.homeSave.textContent=t('Sauvegarder');$('#openSearch').title=$('#openSearch').ariaLabel=t('Recherche');$('#openInfo').title=$('#openInfo').ariaLabel=t('Infos');$('#openSettings').title=$('#openSettings').ariaLabel=t('Bibliothèque');E.empty.textContent=t('Aucune référence pour ce filtre.');$('#searchDrawer h2').textContent=t('Recherche');E.searchInput.placeholder=t('Recherche');if(E.homeSearchInput)E.homeSearchInput.placeholder=t('Recherche');document.querySelector('label[for="favoriteFilter"]')?.remove();$$('.field label').forEach(l=>{const v=l.textContent.trim(); if(['Favori','Catégorie','Nom du tableau','Tri','Nouvelle catégorie','Nom affiché','Lien','Image','Tags','Description'].includes(v)||Object.values(I18N.en).includes(v)){const fr=Object.entries(I18N.en).find(([,en])=>en===v)?.[0]||v;l.textContent=t(fr)}});$$('.countTitle').forEach(el=>{if(el.textContent.trim()==='Catégories'||el.textContent.trim()==='Categories')el.textContent=t('Catégories');if(el.textContent.trim()==='Tags')el.textContent=t('Tags')});$('#infoDrawer h2').textContent=t('Infos');$('#infoDrawer .note').innerHTML=`<strong>${t('Objectif.')}</strong> ${t('Se créer une collection personnelle de références visuelles à avoir sous la main dès que nécessaire.')}<br><br><strong>${t('Usage.')}</strong> ${t('Collez un lien, ajoutez-le, puis utilisez le crayon pour régler le nom, l’image, la catégorie et les tags.')}<br><br><strong>${t('Recherche.')}</strong> ${t('La loupe permet de retrouver les références par mot-clé, favori, catégorie ou tag.')}<br><br><strong>${t('Bibliothèque.')}</strong> ${t('La roue crantée regroupe le tri, l’import/export JSON, la langue et la gestion des catégories.')}`;$('#settingsDrawer h2').textContent=t('Bibliothèque');$('#exportBtn').textContent=t('Exporter JSON');$('#importAddBtn').textContent=t('Importer et ajouter');$('#importReplaceBtn').textContent=t('Importer et remplacer');$('#saveEditOnClose').closest('.checkOption').querySelector('span').childNodes[0].nodeValue=t('Enregistrer les changements à la fermeture d’une fiche');$('#saveEditOnClose').closest('.checkOption').querySelector('small').textContent=t('Si décoché, la croix et le clic hors fiche ignorent les modifications non validées.');updateLangSwitchVisual();$('#settingsDrawer .note').textContent=t('Les données sont enregistrées localement dans ce navigateur. L’export JSON sert de sauvegarde.');$('#newCategoryName').placeholder=t('Nom');$('#addCategoryBtn').textContent=t('Ajouter');$('#resetBtn').textContent=t('Restaurer les références par défaut');$('#editDrawer h2').textContent=t('Modifier');$('#editImage').placeholder=t('URL d’image ou aperçu automatique');$('#importEditImageBtn').textContent=t('Importer une image');$('#removeEditImageBtn').textContent=t('Retirer l’image');$('#homeSearchClear').setAttribute('aria-label',t('Effacer la recherche'));$('#homeSearchClear').title=t('Effacer la recherche');$('#saveEdit').textContent=t('Valider');$('#copyLink').textContent=t('Copier le lien');$('#deleteEdit').textContent=t('Supprimer');if(E.langSwitch)E.langSwitch.checked=S.lang==='en';updateStaticSelectLabels();}
+
+/* Réécrit les libellés des menus fixes après un changement de langue sans perdre la valeur actuellement sélectionnée. */
+function updateStaticSelectLabels(){const favOpts=[E.favoriteFilter,E.homeFavoriteFilter].filter(Boolean);favOpts.forEach(sel=>{const val=sel.value;sel.innerHTML=`<option value="all">${t('Tous')}</option><option value="favorites">${t('Favoris')}</option>`;sel.value=val||'all'});if(E.sort){const val=E.sort.value||S.sort;const labels={manual:'Ordre manuel',recent:'Plus récent',alpha:'Alphabétique',category:'Catégorie',favorite:'Favoris d’abord'};Array.from(E.sort.options).forEach(o=>o.textContent=t(labels[o.value]||o.textContent));E.sort.value=val}}
+
+/* Génère un identifiant stable assez unique pour une nouvelle fiche de référence. */
+/* =========================
+   3. UTILITAIRES
+   ========================= */
+function updateSearchClear(){
+  const btn=$('#homeSearchClear');
+  if(!btn)return;
+  btn.classList.toggle('is-visible',!!(S.filter.q&&S.filter.q.length));
+}
+
+function normalizeSearchText(value){
+  return String(value??'')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'')
+    .toLowerCase();
+}
+
+/* Génère un identifiant unique pour une nouvelle référence. */
+function uid(){return 'ref_'+Math.random().toString(36).slice(2,8)+Date.now().toString(36).slice(-5)}
+
+/* Échappe les caractères HTML sensibles avant insertion dans le DOM afin d’éviter les injections de balises. */
+function esc(v){return String(v??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[m]))}
+
+/* Nettoie et valide une URL saisie par l’utilisateur. Ajoute https:// si nécessaire. */
+function normalizeUrl(v){let s=String(v||'').trim();if(!s)return '';if(!/^https?:\/\//i.test(s))s='https://'+s;if(!/^https?:\/\/[^\s.]+\.[^\s]+/i.test(s))return '';return s}
+
+/* Extrait le nom de domaine lisible d’une URL normalisée. */
+function domainOf(url){try{return new URL(normalizeUrl(url)).hostname.replace(/^www\./,'')}catch(e){return ''}}
+
+/* Propose un titre provisoire à partir du domaine lorsque l’utilisateur n’a pas nommé la référence. */
+function titleFromDomain(url){return domainOf(url).split('.')[0].replace(/[-_]+/g,' ').replace(/\b\w/g,m=>m.toUpperCase())||'Référence'}
+
+/* Nettoie une liste de tags : découpe, trim, minuscules, suppression des vides et des doublons. */
+function cleanTags(v){const arr=Array.isArray(v)?v:String(v||'').split(',');return [...new Set(arr.map(t=>String(t).trim().toLowerCase()).filter(Boolean))]}
+
+/* Produit une URL d’aperçu automatique utilisée quand aucune image personnalisée n’est fournie. */
+function screenshotUrl(url){return 'https://image.thum.io/get/width/600/crop/420/noanimate/'+encodeURIComponent(normalizeUrl(url))}
+
+/* Retourne la couleur associée à une catégorie, avec couleur de secours si la catégorie est inconnue. */
+function categoryColor(cat){return S.categoryColors[cat]||DEFAULT_CATEGORY_COLORS[cat]||'#9FC3CF'}
+
+/* Retourne la liste complète des catégories disponibles, incluant celles présentes dans les fiches importées. */
+function allCategories(){const set=new Set([...(S.categories||DEFAULT_CATEGORIES),...S.items.map(it=>it.category).filter(Boolean),'Divers']);return [...set].sort((a,b)=>a.localeCompare(b,'fr',{sensitivity:'base'}))}
+
+/* Synchronise la liste des catégories, garantit la présence de Divers et attribue une couleur aux nouvelles catégories. */
+function normalizeCategories(){S.categories=allCategories();S.categoryColors={...DEFAULT_CATEGORY_COLORS,...(S.categoryColors||{})};if(!S.categoryColors.Divers)S.categoryColors.Divers='#D8D0C4'}
+
+/* Construit les initiales utilisées dans l’image de secours quand une vignette ne charge pas. */
+function initials(title,domain){const src=String(title||domain||'R').replace(/[^A-Za-zÀ-ÿ0-9 ]/g,' ').trim();const parts=src.split(/\s+/).filter(Boolean);return (parts.length>1?(parts[0][0]+parts[1][0]):src.slice(0,2)).toUpperCase()}
+
+/* Normalise une donnée brute en fiche complète conforme au modèle interne de l’application. */
+function makeItem(raw){const url=normalizeUrl(raw.url);const now=new Date().toISOString();const title=(raw.title||titleFromDomain(url)).trim();return {id:raw.id||uid(),title,url,domain:domainOf(url),category:raw.category||'Divers',tags:cleanTags(raw.tags),description:raw.description||'',imageUrl:raw.imageUrl||screenshotUrl(url),favorite:!!raw.favorite,createdAt:raw.createdAt||now,updatedAt:raw.updatedAt||now}}
+
+/* Construit une copie propre de la bibliothèque par défaut pour éviter de modifier les constantes originales. */
+function initialItems(){return DEFAULT_REFERENCES.map(makeItem)}
+
+/* Sauvegarde tout l’état utile dans localStorage : fiches, catégories, couleurs, filtres, tri, langue et préférences. */
+/* =========================
+   4. SAUVEGARDE / CHARGEMENT
+   ========================= */
+function save(){normalizeCategories();localStorage.setItem(STORAGE_KEY,JSON.stringify({app:'references-visuelles',version:'1.6',items:S.items,categories:S.categories,categoryColors:S.categoryColors,sort:S.sort,saveEditOnClose:!!S.saveEditOnClose,lang:S.lang,projectName:S.projectName||'Mes références'}))}
+
+/*
+  Charge l’état local s’il existe.
+  Les références personnelles de l’utilisateur priment sur le catalogue officiel.
+  Le JSON externe n’est réappliqué que lors d’un premier démarrage ou via « Restaurer les références par défaut ».
+*/
+function load(){try{const raw=localStorage.getItem(STORAGE_KEY);if(raw){const d=JSON.parse(raw);if(Array.isArray(d.items)){S.items=d.items.map(makeItem);S.categories=Array.isArray(d.categories)?d.categories:[...DEFAULT_CATEGORIES];S.categoryColors={...DEFAULT_CATEGORY_COLORS,...(d.categoryColors||{})};S.sort=d.sort||S.sort;S.saveEditOnClose=d.saveEditOnClose!==false;S.lang=d.lang||S.lang;S.projectName=(d.projectName||S.projectName||'Mes références').trim();normalizeCategories();return}}}catch(e){}S.items=initialItems();normalizeCategories();save()}
+
+/* Affiche un message discret de statut pendant quelques secondes. */
+function toast(msg){E.status.textContent=t(msg);E.status.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>E.status.classList.remove('show'),1600)}
+
+/* Teste si une fiche correspond aux filtres actifs : texte, favori, catégorie, tag et absence de tag. */
+/* =========================
+   5. RENDU / FILTRES
+   ========================= */
+function matchItem(it){
+  const f=S.filter;
+  if(f.favorites&&!it.favorite)return false;
+  if(f.noTag&&it.tags.length)return false;
+  if(f.category&&it.category!==f.category)return false;
+  if(f.tag&&!it.tags.includes(f.tag))return false;
+  if(f.q){
+    const q=normalizeSearchText(f.q);
+    const hay=normalizeSearchText([it.title,it.url,it.domain,it.category,it.description,...it.tags].join(' '));
+    if(!hay.includes(q))return false;
+  }
+  return true;
+}
+
+/* Retourne une copie triée des fiches selon le mode choisi : manuel, récent, alphabétique, catégorie ou favoris. */
+function sorted(items){const a=[...items];if(S.sort==='manual')return a;if(S.sort==='alpha')a.sort((x,y)=>x.title.localeCompare(y.title,'fr'));else if(S.sort==='category')a.sort((x,y)=>(x.category+x.title).localeCompare(y.category+y.title,'fr'));else if(S.sort==='favorite')a.sort((x,y)=>(y.favorite-x.favorite)||x.title.localeCompare(y.title,'fr'));else a.sort((x,y)=>String(y.createdAt).localeCompare(String(x.createdAt)));return a}
+
+/* Calcule la liste finale des fiches à afficher après filtrage puis tri. */
+function filteredItems(){return sorted(S.items.filter(matchItem))}
+
+/* Retourne le libellé singulier ou pluriel selon un nombre donné. */
+function plural(n){return n+' '+(S.lang==='en'?(n>1?'references':'reference'):('référence'+(n>1?'s':'')))}
+
+/* Rafraîchit toute l’interface visible : cartes, compteurs, filtres, catégories, traduction et champs de réglage. */
+function render(){normalizeCategories();if(E.searchInput)E.searchInput.value=S.filter.q||'';if(E.homeSearchInput)E.homeSearchInput.value=S.filter.q||'';updateSearchClear();const items=filteredItems();E.grid.innerHTML=items.map(cardHTML).join('');E.empty.classList.toggle('hidden',items.length>0);E.count.textContent=plural(items.length);renderFilterChips();renderSearchLists();renderCategoryManager();bindCards();if(E.sort)E.sort.value=S.sort;if(E.saveEditOnClose)E.saveEditOnClose.checked=!!S.saveEditOnClose;applyI18n()}
+
+/* Génère le HTML d’une mini-fiche de référence avec image, nom, marque favori et bouton crayon. */
+function cardHTML(it){const init=initials(it.title,it.domain);const cat=it.category||'Divers';return `<article class="card" data-id="${esc(it.id)}" style="--catColor:${esc(categoryColor(it.category))}"><a class="cardLink" draggable="false" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" title="${esc(it.title)}"><div class="thumb"><img src="${esc(it.imageUrl||screenshotUrl(it.url))}" alt="" loading="lazy" onerror="this.parentElement.classList.add('noImg');this.remove();"><span class="fallbackIcon"><b>${esc(init)}</b><small>${esc(cat)}</small></span></div><div class="name">${esc(it.title)}</div></a>${it.favorite?'<span class="favMark"></span>':''}<button class="editBtn" data-edit="${esc(it.id)}" title="${esc(t('Modifier'))}" aria-label="${esc(t('Modifier'))}">✎</button></article>`}
+
+/* Affiche les pastilles de filtres actifs sous le compteur de résultats. */
+function renderFilterChips(){const f=S.filter;const chips=[];if(f.q)chips.push(['Recherche',f.q,()=>{f.q='';E.searchInput.value='';if(E.homeSearchInput)E.homeSearchInput.value=''}]);if(f.category)chips.push(['Catégorie',f.category,()=>f.category='']);if(f.tag)chips.push(['Tag',f.tag,()=>f.tag='']);if(f.favorites)chips.push(['Favoris','',()=>f.favorites=false]);if(f.noTag)chips.push(['Sans tag','',()=>f.noTag=false]);E.filters.innerHTML=chips.map((c,i)=>`<button class="chip active" data-clear-filter="${i}">${esc(c[0])}${c[1]?': '+esc(c[1]):''} ×</button>`).join('');$$('[data-clear-filter]').forEach(b=>b.onclick=()=>{chips[+b.dataset.clearFilter][2]();render()})}
+
+/* Compte les occurrences d’un champ ou d’une liste de champs pour alimenter les filtres avec nombres. */
+function countsBy(getter){const m=new Map();S.items.forEach(it=>{const vals=getter(it);(Array.isArray(vals)?vals:[vals]).filter(Boolean).forEach(v=>m.set(v,(m.get(v)||0)+1))});return [...m.entries()].sort((a,b)=>a[0].localeCompare(b[0],'fr',{sensitivity:'base'}))}
+
+/* Met à jour les menus de filtres principaux et de recherche avec les catégories et leurs occurrences. */
+function renderFilterFields(cats){const countMap=new Map(cats);const opts='<option value="">'+t('Toutes')+'</option>'+allCategories().map(v=>`<option value="${esc(v)}">${esc(v)}${countMap.has(v)?' ('+countMap.get(v)+')':''}</option>`).join('');[E.categoryFilter,E.homeCategoryFilter].filter(Boolean).forEach(sel=>{const cur=S.filter.category||'';sel.innerHTML=sel===E.homeCategoryFilter?opts.replace(t('Toutes'),t('Toutes catégories')):opts;sel.value=cur});[E.favoriteFilter,E.homeFavoriteFilter].filter(Boolean).forEach(sel=>{sel.value=S.filter.favorites?'favorites':'all'})}
+
+/* Construit les listes cliquables de catégories et de tags du panneau Recherche. */
+function renderSearchLists(){const cats=countsBy(it=>it.category);const tags=countsBy(it=>it.tags);renderFilterFields(cats);E.categoryList.innerHTML=cats.map(([v,n])=>`<button class="countChip ${S.filter.category===v?'active':''}" data-cat="${esc(v)}">${esc(v)}<strong>${n}</strong></button>`).join('');E.tagList.innerHTML=tags.map(([v,n])=>`<button class="countChip ${S.filter.tag===v?'active':''}" data-tag="${esc(v)}">${esc(v)}<strong>${n}</strong></button>`).join('')||'<span class="note">'+t('Aucun tag.')+'</span>';$$('[data-cat]').forEach(b=>b.onclick=()=>{S.filter.category=S.filter.category===b.dataset.cat?'':b.dataset.cat;S.filter.noTag=false;render()});$$('[data-tag]').forEach(b=>b.onclick=()=>{S.filter.tag=S.filter.tag===b.dataset.tag?'':b.dataset.tag;S.filter.noTag=false;render()})}
+
+/* Compte combien de fiches utilisent chaque catégorie, utile pour la gestion des catégories. */
+/* =========================
+   6. CATÉGORIES
+   ========================= */
+function categoryUsage(name){return S.items.filter(it=>it.category===name).length}
+
+/* Met à jour les fiches après renommage ou suppression d’une catégorie. */
+function updateCardsForCategory(cat){const color=categoryColor(cat);S.items.forEach(it=>{if(it.category===cat){const card=document.querySelector(`.card[data-id="${CSS.escape(it.id)}"]`);if(card)card.style.setProperty('--catColor',color)}})}
+
+/* Affiche le gestionnaire de catégories : nom, couleur, occurrences et suppression éventuelle. */
+function renderCategoryManager(){E.categoryManager.innerHTML=allCategories().map(cat=>{const locked=cat==='Divers';const count=categoryUsage(cat);return `<div class="categoryRow ${locked?'locked':''}"><input type="color" value="${esc(categoryColor(cat))}" data-cat-color="${esc(cat)}" aria-label="Couleur ${esc(cat)}"><div class="categoryRowName"><input value="${esc(cat)}" data-cat-name="${esc(cat)}" ${locked?'disabled':''} aria-label="Nom de catégorie ${esc(cat)}"><small>${count} ${S.lang==='en'?(count>1?'cards':'card'):('fiche'+(count>1?'s':''))}${locked?(S.lang==='en'?' · fallback category':' · catégorie de secours'):''}</small></div><button class="btn danger" data-cat-delete="${esc(cat)}" ${locked?'disabled':''}>${t('Supprimer')}</button></div>`}).join('');$$('[data-cat-color]').forEach(inp=>{['click','pointerdown','touchstart','input','change'].forEach(ev=>inp.addEventListener(ev,e=>e.stopPropagation(),{passive:true}));const apply=()=>{S.categoryColors[inp.dataset.catColor]=inp.value;save();updateCardsForCategory(inp.dataset.catColor)};inp.oninput=apply;inp.onchange=apply});$$('[data-cat-name]').forEach(inp=>{inp.onchange=()=>renameCategory(inp.dataset.catName,inp.value);inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();inp.blur()}})});$$('[data-cat-delete]').forEach(btn=>btn.onclick=()=>deleteCategory(btn.dataset.catDelete))}
+
+/* Renomme une catégorie, transfère sa couleur et répercute le changement sur toutes les fiches concernées. */
+function renameCategory(oldName,newValue){const newName=(newValue||'').trim();if(oldName==='Divers')return;if(!newName){toast('Nom de catégorie manquant.');render();return}if(newName===oldName)return;if(allCategories().some(c=>c!==oldName&&c.toLowerCase()===newName.toLowerCase())){toast('Catégorie déjà présente.');render();return}S.categories=S.categories.map(c=>c===oldName?newName:c);S.items.forEach(it=>{if(it.category===oldName)it.category=newName});S.categoryColors[newName]=S.categoryColors[oldName]||'#9FC3CF';delete S.categoryColors[oldName];if(S.filter.category===oldName)S.filter.category=newName;save();render();toast('Catégorie renommée.')}
+
+/* Ajoute une nouvelle catégorie avec la couleur choisie dans le panneau Bibliothèque. */
+function addCategory(){const name=(E.newCategoryName.value||'').trim();if(!name){toast('Nom de catégorie manquant.');return}if(allCategories().some(c=>c.toLowerCase()===name.toLowerCase())){toast('Catégorie déjà présente.');return}S.categories.push(name);S.categoryColors[name]=E.newCategoryColor.value||'#9FC3CF';E.newCategoryName.value='';save();render();toast('Catégorie ajoutée.')}
+
+/* Supprime une catégorie après confirmation et déplace ses fiches vers Divers. */
+function deleteCategory(name){if(name==='Divers')return;const used=categoryUsage(name);const msg=used?`Supprimer “${name}” ? ${used} fiche${used>1?'s':''} seront déplacées dans “Divers”.`:`Supprimer “${name}” ?`;if(!confirm(msg))return;S.items.forEach(it=>{if(it.category===name)it.category='Divers'});S.categories=S.categories.filter(c=>c!==name);delete S.categoryColors[name];if(S.filter.category===name)S.filter.category='';save();render();toast('Catégorie supprimée.')}
+
+/* Branche les événements des cartes après chaque rendu : édition, ouverture du lien et glissé-déposé. */
+/* =========================
+   7. GLISSÉ-DÉPOSÉ
+   ========================= */
+function bindCards(){$$('[data-edit]').forEach(b=>b.onclick=e=>{e.preventDefault();e.stopPropagation();openEdit(b.dataset.edit)});$$('.card').forEach(card=>{card.addEventListener('pointerdown',startCardDrag);card.addEventListener('touchstart',startTouchCardDrag,{passive:true});card.addEventListener('contextmenu',e=>{if(S.drag){e.preventDefault();e.stopPropagation()}});const link=card.querySelector('.cardLink');if(link){link.draggable=false;link.addEventListener('dragstart',e=>e.preventDefault());link.addEventListener('click',e=>{if(S.justDragged){e.preventDefault();e.stopPropagation()}})}})}
+
+/* Prépare l’état nécessaire avant d’activer réellement le glissé-déposé d’une fiche. */
+function armDrag(card,startX,startY,pointerType,pointerId){const isTouch=pointerType==='touch'||pointerType==='pen';const delay=isTouch?620:240;S.drag={id:card.dataset.id,card,startX,startY,lastX:startX,lastY:startY,armed:false,target:null,timer:null,cancelled:false,pointerType,pointerId};S.drag.timer=setTimeout(()=>{const d=S.drag;if(!d||d.id!==card.dataset.id||d.cancelled)return;d.armed=true;d.card.classList.add('dragReady','dragging');document.body.classList.add('dragging-card');S.justDragged=true;if(pointerId!==null&&pointerId!==undefined){try{card.setPointerCapture?.(pointerId)}catch(err){}}if(navigator.vibrate)try{navigator.vibrate(18)}catch(err){};toast('Déplacement actif.')},delay)}
+
+/* Démarre le système de glissé-déposé à la souris ou au pointeur sur desktop. */
+function startCardDrag(e){if(e.pointerType==='touch'||e.pointerType==='pen')return;if(e.button!==0||e.target.closest('.editBtn'))return;armDrag(e.currentTarget,e.clientX,e.clientY,e.pointerType,e.pointerId);document.addEventListener('pointermove',moveCardDrag,{passive:false});document.addEventListener('pointerup',endCardDrag,{passive:false});document.addEventListener('pointercancel',endCardDrag,{passive:false})}
+
+/* Démarre le maintien long tactile sur mobile/tablette sans bloquer le scroll avant activation. */
+function startTouchCardDrag(e){if(e.target.closest('.editBtn')||!e.touches||e.touches.length!==1)return;const t=e.touches[0];armDrag(e.currentTarget,t.clientX,t.clientY,'touch','touch');document.addEventListener('touchmove',moveTouchCardDrag,{passive:false});document.addEventListener('touchend',endTouchCardDrag,{passive:false});document.addEventListener('touchcancel',cancelTouchCardDrag,{passive:false})}
+
+/* Identifie la fiche située sous un point écran pendant un déplacement. */
+function cardAtPoint(x,y,dragCard){const old=dragCard.style.visibility;dragCard.style.visibility='hidden';const el=document.elementFromPoint(x,y)?.closest('.card');dragCard.style.visibility=old;return el&&el!==dragCard?el:null}
+
+/* Déplace visuellement la fiche en cours de drag sans modifier encore l’ordre des données. */
+function updateCardDragPosition(clientX,clientY,evt){const d=S.drag;if(!d)return;const dx=clientX-d.startX,dy=clientY-d.startY;const dist=Math.hypot(dx,dy);d.lastX=clientX;d.lastY=clientY;if(!d.armed){const tolerance=(d.pointerType==='touch'||d.pointerType==='pen')?18:10;if(dist>tolerance){d.cancelled=true;if(d.timer)clearTimeout(d.timer);cleanupDragListeners(d);S.drag=null}return}if(evt)evt.preventDefault();d.card.style.transform=`translate(${dx}px,${dy}px) scale(.98)`;if(d.target)d.target.classList.remove('dropTarget');d.target=cardAtPoint(clientX,clientY,d.card);if(d.target)d.target.classList.add('dropTarget')}
+
+/* Gère le mouvement souris/pointeur d’une fiche et détecte la cible de dépôt. */
+function moveCardDrag(e){updateCardDragPosition(e.clientX,e.clientY,e)}
+
+/* Gère le mouvement tactile d’une fiche après maintien long, avec prévention du scroll seulement quand le drag est actif. */
+function moveTouchCardDrag(e){if(!e.touches||e.touches.length!==1)return;const t=e.touches[0];updateCardDragPosition(t.clientX,t.clientY,e)}
+
+/* Nettoie tous les écouteurs temporaires utilisés pendant un glissé-déposé. */
+function cleanupDragListeners(d){document.removeEventListener('pointermove',moveCardDrag);document.removeEventListener('pointerup',endCardDrag);document.removeEventListener('pointercancel',endCardDrag);document.removeEventListener('touchmove',moveTouchCardDrag);document.removeEventListener('touchend',endTouchCardDrag);document.removeEventListener('touchcancel',cancelTouchCardDrag);if(d?.card)d.card.classList.remove('dragReady');document.body.classList.remove('dragging-card')}
+
+/* Finalise ou annule un déplacement, réordonne les fiches si une cible valide est trouvée. */
+function finishCardDrag(clientX,clientY,cancelled=false){const d=S.drag;if(!d)return;if(d.timer)clearTimeout(d.timer);cleanupDragListeners(d);if(d.target)d.target.classList.remove('dropTarget');d.card.classList.remove('dragging');d.card.style.transform='';if(d.armed&&!cancelled){const x=clientX??d.lastX,y=clientY??d.lastY;const target=d.target||cardAtPoint(x,y,d.card);if(target&&target.dataset.id&&target.dataset.id!==d.id){reorderItems(d.id,target.dataset.id,y,target);S.sort='manual';save();render();toast('Ordre modifié.')}S.justDragged=true;setTimeout(()=>S.justDragged=false,320)}S.drag=null}
+
+/* Termine un glissé-déposé déclenché au pointeur. */
+function endCardDrag(e){finishCardDrag(e?.clientX,e?.clientY,false)}
+
+/* Termine un glissé-déposé tactile avec la dernière position du doigt. */
+function endTouchCardDrag(e){const t=e.changedTouches&&e.changedTouches[0];finishCardDrag(t?.clientX,t?.clientY,false)}
+
+/* Gère les annulations tactiles envoyées par Safari/iOS, en conservant le déplacement si possible. */
+function cancelTouchCardDrag(e){const d=S.drag;if(d&&d.armed){const t=e.changedTouches&&e.changedTouches[0];finishCardDrag(t?.clientX??d.lastX,t?.clientY??d.lastY,false)}else finishCardDrag(null,null,true)}
+
+/* Modifie l’ordre réel des fiches dans le tableau selon la position de dépôt. */
+function reorderItems(id,targetId,clientY,targetEl){const from=S.items.findIndex(x=>x.id===id);if(from<0)return;const [moved]=S.items.splice(from,1);let insert=S.items.findIndex(x=>x.id===targetId);const r=targetEl.getBoundingClientRect();if(clientY>r.top+r.height/2)insert++;S.items.splice(Math.max(0,insert),0,moved)}
+
+/* Ajoute une référence depuis le champ principal, avec validation de lien et détection des doublons. */
+/* =========================
+   8. AJOUT / ÉDITION
+   ========================= */
+function addFromTop(){const url=normalizeUrl(E.url.value);if(!url){toast(t('Lien invalide.'));return}const existing=S.items.find(it=>it.url===url);if(existing){if(confirm(t('Ce lien existe déjà. Ouvrir la fiche existante ?')))openEdit(existing.id);toast(t('Lien déjà présent.'));return}const it=makeItem({url});S.items.unshift(it);E.url.value='';save();render();toast(t('Référence ajoutée.'))}
+
+/* Ouvre un panneau latéral et place le focus dans la recherche si nécessaire. */
+function openDrawer(id){$('#'+id).classList.add('open');$('#'+id).setAttribute('aria-hidden','false');if(id==='searchDrawer')setTimeout(()=>E.searchInput.focus(),80)}
+
+/* Ferme un panneau latéral et applique ou ignore les changements de fiche selon le réglage choisi. */
+function closeDrawer(id,opts={}){if(id==='editDrawer'&&!opts.skipEditExit&&S.editing){if(S.saveEditOnClose){if(applyEditChanges(true))toast('Changements enregistrés.')}else{toast('Changements ignorés.')}}$('#'+id).classList.remove('open');$('#'+id).setAttribute('aria-hidden','true');if(id==='editDrawer')S.editing=null}
+
+/* Remplit un menu de catégories en conservant la valeur courante même si elle vient d’un import. */
+function fillCategorySelect(sel,value){const cats=allCategories();if(value&&!cats.includes(value))cats.push(value);sel.innerHTML=cats.sort((a,b)=>a.localeCompare(b,'fr',{sensitivity:'base'})).map(c=>`<option ${c===value?'selected':''}>${esc(c)}</option>`).join('')}
+
+/* Génère le bouton favori de la fiche avec cœur SVG rouge flat. */
+function favButtonHTML(isFav){const label=t(isFav?'Retirer favori':'Favori');return `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C.9 8.1 2.9 4.5 6.7 4.2c2-.2 3.9.8 5.3 2.6 1.4-1.8 3.3-2.8 5.3-2.6 3.8.3 5.8 3.9 4.2 7.6C19.5 16.4 12 21 12 21z"></path></svg><span>${esc(label)}</span>`}
+
+/* Ouvre la fiche de modification et préremplit tous les champs depuis la référence sélectionnée. */
+function openEdit(id){const it=S.items.find(x=>x.id===id);if(!it)return;S.editing=id;$('#editTitle').value=it.title;$('#editUrl').value=it.url;$('#editImage').value=it.imageUrl||'';fillCategorySelect($('#editCategory'),it.category);$('#editTags').value=it.tags.join(', ');$('#editDescription').value=it.description||'';$('#editPreview').src=it.imageUrl||screenshotUrl(it.url);$('#toggleFav').innerHTML=favButtonHTML(it.favorite);openDrawer('editDrawer')}
+
+/* 
+  Importe une image locale pour la fiche.
+  L'image est réduite avant stockage afin de limiter la taille du localStorage et des exports JSON.
+  Le résultat est conservé sous forme de data URL dans imageUrl : aucune image n'est envoyée vers un serveur.
+*/
+async function importEditImage(file){
+  if(!file||!file.type.startsWith('image/'))return;
+  const source=await new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>resolve(r.result);
+    r.onerror=reject;
+    r.readAsDataURL(file);
+  });
+  const img=await new Promise((resolve,reject)=>{
+    const el=new Image();
+    el.onload=()=>resolve(el);
+    el.onerror=reject;
+    el.src=source;
+  });
+  const maxSide=1200;
+  const scale=Math.min(1,maxSide/Math.max(img.naturalWidth||img.width,img.naturalHeight||img.height));
+  const w=Math.max(1,Math.round((img.naturalWidth||img.width)*scale));
+  const h=Math.max(1,Math.round((img.naturalHeight||img.height)*scale));
+  const canvas=document.createElement('canvas');
+  canvas.width=w;canvas.height=h;
+  const ctx=canvas.getContext('2d');
+  ctx.drawImage(img,0,0,w,h);
+  const data=canvas.toDataURL('image/jpeg',0.82);
+  if(data.length>1800000){
+    toast(t('Image trop volumineuse.'));
+    return;
+  }
+  $('#editImage').value=data;
+  $('#editPreview').src=data;
+  toast(t('Image importée.'));
+}
+
+/* Applique les valeurs de la fiche de modification à la référence et sauvegarde les données. */
+function applyEditChanges(shouldRender=true){const it=S.items.find(x=>x.id===S.editing);if(!it)return false;const url=normalizeUrl($('#editUrl').value);if(!url){toast('Lien invalide.');return false}it.title=$('#editTitle').value.trim()||titleFromDomain(url);it.url=url;it.domain=domainOf(url);it.imageUrl=$('#editImage').value.trim()||screenshotUrl(url);it.category=$('#editCategory').value||'Divers';it.tags=cleanTags($('#editTags').value);it.description=$('#editDescription').value.trim();it.updatedAt=new Date().toISOString();save();if(shouldRender)render();return true}
+
+/* Valide explicitement la fiche de modification puis ferme le panneau. */
+function saveEdit(){if(!applyEditChanges(true))return;closeDrawer('editDrawer',{skipEditExit:true});toast('Fiche modifiée.')}
+
+/* Supprime la référence en cours d’édition après confirmation. */
+function deleteEdit(){if(!confirm('Supprimer cette référence ?'))return;S.items=S.items.filter(x=>x.id!==S.editing);save();render();closeDrawer('editDrawer');toast('Référence supprimée.')}
+
+/* Inverse l’état favori de la référence en cours puis rafraîchit la fiche. */
+function toggleFav(){const it=S.items.find(x=>x.id===S.editing);if(!it)return;it.favorite=!it.favorite;save();openEdit(it.id);render()}
+
+/* Copie l’URL de la référence en cours dans le presse-papiers avec méthode de secours. */
+async function copyCurrentLink(){const it=S.items.find(x=>x.id===S.editing);if(!it)return;try{await navigator.clipboard.writeText(it.url);toast('Lien copié.')}catch(e){const ta=document.createElement('textarea');ta.value=it.url;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Lien copié.')}catch(err){toast('Copie impossible.')}ta.remove()}}
+
+/* Transforme le nom du tableau en suffixe sûr pour le nom du fichier exporté. */
+/* =========================
+   9. IMPORT / EXPORT
+   ========================= */
+function filenameSlug(v){return String(v||'mes-references').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'').slice(0,60)||'mes-references'}
+
+/* Exporte la bibliothèque complète en JSON : fiches, catégories et couleurs. */
+function exportJSON(){normalizeCategories();const data={app:'references-visuelles',version:'1.7',exportedAt:new Date().toISOString(),projectName:S.projectName||'Mes références',categories:S.categories,categoryColors:S.categoryColors,items:S.items};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='reference_'+filenameSlug(S.projectName||'Mes références')+'.json';a.click();URL.revokeObjectURL(a.href);toast('JSON exporté.')}
+
+/* Importe un fichier JSON en mode ajout/fusion ou remplacement complet de la bibliothèque. */
+function importJSON(file,mode='add'){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!Array.isArray(d.items))throw new Error('items manquant');const replaceAll=mode==='replace';const incomingCategories=Array.isArray(d.categories)?d.categories:[];const incomingColors=d.categoryColors||{};const incomingItems=d.items.map(makeItem);let replaced=0,added=0;if(replaceAll){S.projectName=String(d.projectName||S.projectName||'Mes références').trim()||'Mes références';S.categories=[...new Set([...DEFAULT_CATEGORIES,...incomingCategories])];S.categoryColors={...DEFAULT_CATEGORY_COLORS,...incomingColors};S.items=incomingItems;normalizeCategories();save();render();toast(t('Import remplacé'));return}if(incomingCategories.length)S.categories=[...new Set([...S.categories,...incomingCategories])];if(d.categoryColors)S.categoryColors={...S.categoryColors,...incomingColors};incomingItems.forEach(incoming=>{const byId=S.items.findIndex(x=>x.id===incoming.id);const byUrl=S.items.findIndex(x=>x.url===incoming.url);const idx=byId>=0?byId:byUrl;if(idx>=0){S.items[idx]=incoming;replaced++}else{S.items.push(incoming);added++}});normalizeCategories();save();render();toast(S.lang==='en'?`${added} added, ${replaced} replaced.`:`${added} ajoutée(s), ${replaced} remplacée(s).`)}catch(e){toast(t('JSON invalide.'))}};r.readAsText(file)}
+
+/* Recharge le JSON externe puis remplace la bibliothèque locale par les références par défaut. */
+async function resetAll(){if(!confirm(t('Restaurer les références par défaut')+' ?'))return;if(!confirm('Les références actuelles seront remplacées par la bibliothèque par défaut.'))return;await loadDefaultData();S.items=initialItems();S.categories=[...DEFAULT_CATEGORIES];S.categoryColors={...DEFAULT_CATEGORY_COLORS};S.filter={q:'',category:'',tag:'',favorites:false,noTag:false};save();render();toast(t('Références par défaut restaurées.'))}
+
+/* Réinitialise tous les filtres et vide le champ de recherche. */
+function resetFilters(){S.filter={q:'',category:'',tag:'',favorites:false,noTag:false};E.searchInput.value='';if(E.homeSearchInput)E.homeSearchInput.value='';render()}
+
+/* Installe tous les écouteurs d’événements de l’application : boutons, champs, panneaux, raccourcis clavier. */
+/* =========================
+   10. ÉVÉNEMENTS / DÉMARRAGE
+   ========================= */
+function bind(){
+$('#editImage').oninput=e=>{$('#editPreview').src=e.target.value.trim()||screenshotUrl($('#editUrl').value)};
+$('#removeEditImageBtn').onclick=()=>{
+  $('#editImage').value='';
+  $('#editPreview').removeAttribute('src');
+};
+$('#homeSearchClear').onclick=()=>{
+  S.filter.q='';
+  if(E.homeSearchInput)E.homeSearchInput.value='';
+  if(E.searchInput)E.searchInput.value='';
+  render();
+  if(E.homeSearchInput)E.homeSearchInput.focus();
+};
+$('#importEditImageBtn').onclick=()=>$('#editImageFile').click();
+$('#editImageFile').onchange=async e=>{
+  const file=e.target.files&&e.target.files[0];
+  if(file){
+    try{await importEditImage(file)}
+    catch(err){console.error(err);toast(t('Image trop volumineuse.'))}
+  }
+  e.target.value='';
+};E.add.onclick=addFromTop;if(E.homeSave)E.homeSave.onclick=exportJSON;E.url.addEventListener('keydown',e=>{if(e.key==='Enter')addFromTop()});$('#openSearch').onclick=()=>openDrawer('searchDrawer');$('#openInfo').onclick=()=>openDrawer('infoDrawer');$('#openSettings').onclick=()=>openDrawer('settingsDrawer');$$('[data-close]').forEach(b=>b.onclick=()=>closeDrawer(b.dataset.close));$$('.drawer').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)closeDrawer(d.id)}));E.searchInput.oninput=e=>{S.filter.q=e.target.value.trim();render()};if(E.homeSearchInput)E.homeSearchInput.oninput=e=>{S.filter.q=e.target.value.trim();render()};E.favoriteFilter.onchange=e=>{S.filter.favorites=e.target.value==='favorites';S.filter.noTag=false;render()};E.homeFavoriteFilter.onchange=e=>{S.filter.favorites=e.target.value==='favorites';S.filter.noTag=false;render()};E.categoryFilter.onchange=e=>{S.filter.category=e.target.value;S.filter.noTag=false;render()};E.homeCategoryFilter.onchange=e=>{S.filter.category=e.target.value;S.filter.noTag=false;render()};E.sort.onchange=e=>{S.sort=e.target.value;save();render()};if(E.saveEditOnClose)E.saveEditOnClose.onchange=e=>{S.saveEditOnClose=e.target.checked;save();toast(S.saveEditOnClose?t('Fermeture : enregistrer.'):t('Fermeture : ignorer.'));};if(E.langSwitch)E.langSwitch.onchange=e=>{S.lang=e.target.checked?'en':'fr';save();render();updateLangSwitchVisual();toast(S.lang==='en'?'English interface.':'Interface française.');};if(E.projectName)E.projectName.onchange=e=>{S.projectName=(e.target.value||'').trim()||'Mes références';save();render();toast(S.lang==='en'?'Board name saved.':'Nom du tableau enregistré.');};$('#addCategoryBtn').onclick=addCategory;E.newCategoryName.addEventListener('keydown',e=>{if(e.key==='Enter')addCategory()});$('#saveEdit').onclick=saveEdit;$('#deleteEdit').onclick=deleteEdit;$('#toggleFav').onclick=toggleFav;$('#copyLink').onclick=copyCurrentLink;$('#editImage').addEventListener('input',e=>{$('#editPreview').src=e.target.value.trim()||screenshotUrl($('#editUrl').value)});$('#editUrl').addEventListener('change',e=>{if(!$('#editTitle').value.trim())$('#editTitle').value=titleFromDomain(e.target.value);if(!$('#editImage').value.trim())$('#editPreview').src=screenshotUrl(e.target.value)});$('#exportBtn').onclick=exportJSON;$('#importAddBtn').onclick=()=>{E.importFile.dataset.mode='add';E.importFile.click()};$('#importReplaceBtn').onclick=()=>{if(confirm(S.lang==='en'?'Replace the whole library with the imported file?':'Remplacer toute la bibliothèque par le fichier importé ?')){E.importFile.dataset.mode='replace';E.importFile.click()}};E.importFile.onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0],E.importFile.dataset.mode||'add');e.target.value='';E.importFile.dataset.mode='add'};$('#resetBtn').onclick=resetAll;document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.drawer.open').forEach(d=>closeDrawer(d.id));if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='f'){e.preventDefault();if(window.matchMedia('(max-width:700px)').matches&&E.homeSearchInput){E.homeSearchInput.focus()}else{openDrawer('searchDrawer')}}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='s'){e.preventDefault();exportJSON()}})}
+load();bind();render();
+})();
+</script>
+</body>
+</html>
